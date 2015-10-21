@@ -9,7 +9,7 @@ import android.support.design.widget.TabLayout;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import stetho.five.stethodemo.R;
-import stetho.five.stethodemo.business.provider.DemoItems;
+import stetho.five.stethodemo.business.provider.DemoItem;
 import stetho.five.stethodemo.ui.adapter.DemoPagerAdapter;
 
 
@@ -33,7 +33,7 @@ public class MainActivity extends FragmentActivity {
     }
 
     private void setupViewPager() {
-        DemoPagerAdapter adapter = new DemoPagerAdapter(getSupportFragmentManager(), DemoItems.getDemoItems());
+        DemoPagerAdapter adapter = new DemoPagerAdapter(getSupportFragmentManager(), DemoItem.getDemoItems());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabsFromPagerAdapter(adapter);

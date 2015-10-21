@@ -22,7 +22,6 @@ public final class StethoDemoApplication extends Application {
         populateDb(this);
     }
 
-
     private void initializeStetho(final Context context) {
         Stetho.initialize(Stetho.newInitializerBuilder(context)
                         .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(context))
@@ -42,9 +41,10 @@ public final class StethoDemoApplication extends Application {
     }
 
     private void createVariable(String name) {
-        Variable foo = new Variable();
-        foo.setName(name);
-        foo.setValue(injector.getRandom().nextInt());
-        foo.update();
+        Variable var = new Variable();
+        var.setName(name);
+        var.setValue(injector.getRandom().nextInt(100));
+        var.setRandomValue(injector.getRandom().nextInt());
+        var.update();
     }
 }

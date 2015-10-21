@@ -20,13 +20,17 @@ public final class Variable extends BaseModel {
     @Column
     private int value;
 
+    @Column
+    private int randomValue;
+
     public Variable() {
     }
 
-    public Variable(long id, String name, int value) {
+    public Variable(long id, String name, int value, int randomValue) {
         this.id = id;
         this.name = name;
         this.value = value;
+        this.randomValue = randomValue;
     }
 
     public long getId() {
@@ -51,5 +55,13 @@ public final class Variable extends BaseModel {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public int getRandomValue() {
+        return randomValue;
+    }
+
+    public void setRandomValue(int randomValue) {
+        this.randomValue = randomValue;
     }
 }

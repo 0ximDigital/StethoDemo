@@ -6,6 +6,9 @@ import com.squareup.okhttp.OkHttpClient;
 
 import java.util.Random;
 
+import stetho.five.stethodemo.business.dao.DemoDao;
+import stetho.five.stethodemo.business.dao.DemoDaoImpl;
+
 public final class Injector {
 
     private static Injector injectorInstance;
@@ -14,6 +17,7 @@ public final class Injector {
 
     private final OkHttpClient okHttpClient;
     private final Random random;
+    private final DemoDao demoDao;
 
     public static Injector getInstance(Context context) {
         if (injectorInstance == null) {
@@ -26,6 +30,7 @@ public final class Injector {
         this.applicationContext = applicationContext;
         this.okHttpClient = new OkHttpClient();
         this.random = new Random();
+        this.demoDao = new DemoDaoImpl();
     }
 
     public Context getApplicationContext() {
@@ -38,5 +43,9 @@ public final class Injector {
 
     public Random getRandom() {
         return random;
+    }
+
+    public DemoDao getDemoDao() {
+        return demoDao;
     }
 }
