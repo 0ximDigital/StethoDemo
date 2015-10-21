@@ -8,6 +8,7 @@ import java.util.Random;
 
 import stetho.five.stethodemo.business.dao.DemoDao;
 import stetho.five.stethodemo.business.dao.DemoDaoImpl;
+import stetho.five.stethodemo.util.PreferenceUtils;
 
 public final class Injector {
 
@@ -18,6 +19,7 @@ public final class Injector {
     private final OkHttpClient okHttpClient;
     private final Random random;
     private final DemoDao demoDao;
+    private final PreferenceUtils preferenceUtils;
 
     public static Injector getInstance(Context context) {
         if (injectorInstance == null) {
@@ -31,6 +33,7 @@ public final class Injector {
         this.okHttpClient = new OkHttpClient();
         this.random = new Random();
         this.demoDao = new DemoDaoImpl();
+        this.preferenceUtils = new PreferenceUtils(applicationContext);
     }
 
     public Context getApplicationContext() {
@@ -47,5 +50,9 @@ public final class Injector {
 
     public DemoDao getDemoDao() {
         return demoDao;
+    }
+
+    public PreferenceUtils getPreferenceUtils() {
+        return preferenceUtils;
     }
 }
