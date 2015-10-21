@@ -1,19 +1,21 @@
 package stetho.five.stethodemo.ui.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.design.widget.TabLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import stetho.five.stethodemo.R;
+import stetho.five.stethodemo.business.provider.DemoItems;
+import stetho.five.stethodemo.ui.adapter.DemoPagerAdapter;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
-    @Bind(stetho.five.stethodemo.R.id.toolbar)
+    @Bind(R.id.toolbar)
     Toolbar toolbar;
 
     @Bind(R.id.tab_layout)
@@ -27,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        setupViewPager();
+    }
+
+    private void setupViewPager() {
+        DemoPagerAdapter adapter = new DemoPagerAdapter(getSupportFragmentManager(), DemoItems.getDemoItems());
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setTabsFromPagerAdapter(adapter);
     }
 
     @Override

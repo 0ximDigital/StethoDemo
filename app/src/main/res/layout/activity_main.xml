@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height"
         android:background="@color/primary"
-        android:titleTextColor="@color/white"
+        app:titleTextAppearance="@style/toolbar_title_text_style"
         app:title="@string/app_name"/>
 
     <android.support.design.widget.TabLayout
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/tab_layout_height"
         android:background="@color/primary"
-        app:tabIndicatorColor="@color/secondary"
+        app:tabIndicatorColor="@color/white"
         app:tabIndicatorHeight="@dimen/tab_layout_indicator_height"
         app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/white"
