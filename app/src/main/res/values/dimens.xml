@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="tab_layout_height">56dp</dimen>
+    <dimen name="tab_layout_indicator_height">3dp</dimen>
+</resources>
