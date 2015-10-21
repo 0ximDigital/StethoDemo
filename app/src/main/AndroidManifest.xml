@@ -3,7 +3,7 @@
     package="stetho.five.stethodemo">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    
+
     <application
         android:name=".application.StethoDemoApplication"
         android:allowBackup="true"
