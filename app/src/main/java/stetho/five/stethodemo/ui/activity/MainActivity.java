@@ -13,7 +13,7 @@ import stetho.five.stethodemo.business.provider.DemoItem;
 import stetho.five.stethodemo.ui.adapter.DemoPagerAdapter;
 
 
-public class MainActivity extends FragmentActivity {
+public final class MainActivity extends FragmentActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;

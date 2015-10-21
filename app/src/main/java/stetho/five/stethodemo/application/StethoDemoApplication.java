@@ -23,10 +23,13 @@ public final class StethoDemoApplication extends Application {
     }
 
     private void initializeStetho(final Context context) {
+
         Stetho.initialize(Stetho.newInitializerBuilder(context)
                         .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(context))
+                        .enableDumpapp(injector.getDemoDumperPluginsProvider())
                         .build()
         );
+
         OkHttpClient client = injector.getOkHttpClient();
         client.networkInterceptors().add(new StethoInterceptor());
     }
